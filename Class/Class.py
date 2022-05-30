@@ -99,6 +99,7 @@ print("자동차2의 색상은 %s 이며, 현재속도는 %d km 입니다."%(myC
 
 print("자동차3의 색상은 %s 이며, 현재속도는 %d km 입니다."%(myCar3.color,myCar3.speed))
 '''
+'''
 #클래스 선언
 class Car :
     color="" #인스턴스 변수
@@ -121,8 +122,44 @@ print("자동차1의 현재 속도는 %dkm, 생산된 자동차 숫자는 총 %d
 myCar2=Car()
 myCar2.speed=60
 print("자동차1의 현재 속도는 %dkm, 생산된 자동차 숫자는 총 %d대입니다."%(myCar2.speed, Car.count))
+'''
 
+#클래스 상속
 
+class Car:
+    speed=0
+
+    def upSpeed(self,value):
+        self.speed = self.speed+value
+
+    def downSpeed(self,value):
+        self.speed=self.speed-value
+
+class Sedan(Car) : #상속
+    seatNum=0
+
+    def getSeatNum(self) :
+        return self.seatNum
+
+class Truck(Car) :
+    capacity=0
+
+    def getCapacity(self):
+        return self.capacity
+
+sedan1, truck1 = None,None
+
+sedan1=Sedan()
+truck1=Truck()
+
+sedan1.upSpeed(100)
+truck1.upSpeed(80)
+
+sedan1.seatNum=5
+truck1.capacity=50
+
+print("승용차의 속도는 %d km, 좌석수는 %d개입니다."%(sedan1.speed,sedan1.getSeatNum()))
+print("트럭의 속도는 %d km, 총중량은 %d톤입니다."%(truck1.speed,truck1.getCapacity()))
 
 
 
