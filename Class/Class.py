@@ -70,6 +70,7 @@ print("자동차2의 색상은 %s 이며, 현재속도는 %d km 입니다."%(myC
 #자동차3만 파란색이된다.
 print("자동차3의 색상은 %s 이며, 현재속도는 %d km 입니다."%(myCar3.color,myCar3.speed))
 '''
+'''
 #매개변수가 있는 생성자 추가
 class Car:
     color=""
@@ -97,3 +98,35 @@ print("자동차1의 색상은 %s 이며, 현재속도는 %d km 입니다."%(myC
 print("자동차2의 색상은 %s 이며, 현재속도는 %d km 입니다."%(myCar2.color,myCar2.speed))
 
 print("자동차3의 색상은 %s 이며, 현재속도는 %d km 입니다."%(myCar3.color,myCar3.speed))
+'''
+#클래스 선언
+class Car :
+    color="" #인스턴스 변수
+    speed=0 #인스턴스 변수
+    count=0 #클래스 변수
+
+    def __init__(self) :
+        self.speed=0
+        Car.count +=1 #인스턴스가 생성 될 때마다 생성된 인스턴스(차)의 갯수를 세어 줌
+
+#변수 선언
+myCar1,myCar2 = None, None
+
+#메인 코드 부분
+
+myCar1=Car()
+myCar1.speed=30
+print("자동차1의 현재 속도는 %dkm, 생산된 자동차 숫자는 총 %d대입니다."%(myCar1.speed, Car.count))
+
+myCar2=Car()
+myCar2.speed=60
+print("자동차1의 현재 속도는 %dkm, 생산된 자동차 숫자는 총 %d대입니다."%(myCar2.speed, Car.count))
+
+
+
+
+
+
+
+
+        
